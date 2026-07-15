@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voter Verification - Sri Lanka Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Voter Verification</h1>
+    <p>Enter your ID to verify that you are registered.</p>
+    <div class="theme-switch">
+      <label for="themeToggle">Light</label>
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" aria-label="Toggle theme" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <form id="verifyForm">
+        <label>
+          ID type
+          <select id="verifyIdType">
+            <option value="nic">NIC</option>
+            <option value="driving">Driving license</option>
+            <option value="passport">Passport</option>
+          </select>
+        </label>
+
+        <label>
+          ID number
+          <input type="text" id="verifyIdNumber" required />
+        </label>
+
+        <button type="submit">Verify</button>
+      </form>
+      <p id="verifyMessage" class="message"></p>
+    </section>
+  </main>
+
+  <p style="text-align:center;margin-top:1rem;"><a href="index.html">Back to voting</a> · <a href="register.html">Register</a></p>
+
+  <script src="bg-rotator.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+  <script src="verify.js" defer></script>
+</body>
+</html>

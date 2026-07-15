@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Lanka Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Sri Lanka Presidential Voting System</h1>
+    <div style="height:0.75rem" aria-hidden="true"></div>
+    <div class="theme-switch">
+      <label for="themeToggle">Light</label>
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" aria-label="Toggle theme" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" id="voterDetailsSection" style="display:none;">
+      <h2>Verified Voter Details</h2>
+      <div style="padding: 1rem; background: #f0f4f8; border-radius: 12px; margin-bottom: 1rem;">
+        <p><strong>Name:</strong> <span id="detailsName">-</span></p>
+        <p><strong>Voter ID:</strong> <span id="detailsVoterId">-</span></p>
+        <p><strong>District:</strong> <span id="detailsDistrict">-</span></p>
+      </div>
+      <button type="button" id="logoutVoterButton" class="secondary">Change Voter</button>
+    </section>
+
+    <section class="card card-accent">
+      <h2>Vote</h2>
+      <form id="voteForm">
+        <div class="candidates">
+          <p>Select your candidate:</p>
+          <div id="candidateList"></div>
+        </div>
+
+        <button type="submit">Submit Vote</button>
+      </form>
+      <p id="message" class="message"></p>
+      <p id="verifyNotice" style="margin-top:0.5rem;color:#7b8794;font-size:0.95rem;">
+        You must verify before voting. <a href="register.html">Register</a> or <a href="verify.html">Verify</a> your voter ID.
+      </p>
+    </section>
+
+    <!-- Confirmation modal -->
+    <div id="confirmModal" class="modal" aria-hidden="true" style="display:none;">
+      <div class="modal-content card">
+        <h3>Confirm Your Vote</h3>
+        <p id="confirmText">Please confirm your selection.</p>
+        <div class="confirm-actions" style="display:flex;gap:0.75rem;justify-content:flex-end;margin-top:1rem;">
+          <button id="confirmCancel" class="secondary" type="button">Cancel</button>
+          <button id="confirmButton" class="confirm" type="button">Confirm Vote</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="card card-accent">
+      <h2>Live Vote Results</h2>
+      <div id="results"></div>
+      <button id="resetButton" class="secondary">Reset Demo Data</button>
+    </section>
+
+    <!-- Voter history removed from public UI for privacy -->
+  </main>
+
+  <p style="text-align:center;margin-bottom:1rem;"><a href="admin.html">Admin login / registration</a></p>
+
+  <script src="bg-rotator.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

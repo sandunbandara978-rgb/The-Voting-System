@@ -1,0 +1,13 @@
+{
+  "name": "sri-lanka-voting-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple Sri Lanka voting system demo",
+  "scripts": {
+    "start": "npx live-server src --port=5500",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

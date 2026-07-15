@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Sri Lanka Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <p id="adminGreeting">Welcome</p>
+    <div class="theme-switch">
+      <label for="themeToggle">Light</label>
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" aria-label="Toggle theme" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Admin Info</h2>
+      <div id="adminInfo" style="padding: 1rem; background: #f0f4f8; border-radius: 12px; margin-bottom: 1rem;">
+        <p><strong>Name:</strong> <span id="infoName">-</span></p>
+        <p><strong>ID Type:</strong> <span id="infoIdType">-</span></p>
+        <p><strong>ID Value:</strong> <span id="infoIdValue">-</span></p>
+        <p><strong>Province:</strong> <span id="infoProvince">-</span></p>
+        <p><strong>District:</strong> <span id="infoDistrict">-</span></p>
+      </div>
+      <button id="logoutButton" class="secondary">Logout</button>
+    </section>
+
+    <section class="card">
+      <h2>Register Voter</h2>
+      <form id="registerVoterForm">
+        <label>
+          Voter Name
+          <input type="text" id="voterName" placeholder="Full name" required />
+        </label>
+
+        <label>
+          ID type
+          <select id="voterIdType">
+            <option value="nic">NIC</option>
+            <option value="driving">Driving license</option>
+            <option value="passport">Passport</option>
+          </select>
+        </label>
+
+        <label>
+          ID number
+          <input type="text" id="voterIdNumber" placeholder="Voter ID" required />
+        </label>
+
+        <label>
+          District
+          <input type="text" id="voterDistrict" placeholder="District" required />
+        </label>
+
+        <button type="submit">Register Voter</button>
+      </form>
+      <p id="voterMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Registered Voters (Latest 10)</h2>
+      <div id="votersList" style="max-height: 400px; overflow-y: auto;"></div>
+    </section>
+
+    <section class="card">
+      <h2>Admin Report</h2>
+      <p style="margin:0 0 1rem;color:var(--muted,#9fb3c8);">View all recorded votes. Voter ID numbers are masked for security.</p>
+      <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;">
+        <button id="generateReport" class="secondary">Generate Report</button>
+        <button id="downloadCsv" class="secondary">Download CSV</button>
+      </div>
+      <div id="reportContainer" style="max-height:420px;overflow:auto;border-top:1px solid rgba(255,255,255,0.04);padding-top:0.75rem"></div>
+    </section>
+  </main>
+
+  <p style="text-align:center;margin-top:1rem;"><a href="index.html">Back to voting</a></p>
+
+  <script src="bg-rotator.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+  <script src="dashboard.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Sri Lanka Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Admin login and registration for Sri Lanka voting demo" />
+</head>
+<body>
+  <header>
+    <h1>Admin — Voting System</h1>
+    <p>Register an admin account or sign in.</p>
+    <div class="theme-switch">
+      <label for="themeToggle">Light</label>
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" aria-label="Toggle theme" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Admin Registration</h2>
+      <form id="adminRegisterForm">
+        <label>
+          Full name
+          <input type="text" id="adminName" placeholder="Your full name" required />
+        </label>
+
+        <label>
+          ID type
+          <select id="idType">
+            <option value="nic">NIC</option>
+            <option value="driving">Driving license</option>
+            <option value="passport">Passport</option>
+          </select>
+        </label>
+
+        <label>
+          ID number
+          <input type="text" id="idNumber" placeholder="Enter selected ID number" required />
+        </label>
+
+        <label>
+          Province
+          <select id="province">
+            <option value="">Select province...</option>
+            <option value="Western">Western</option>
+            <option value="Central">Central</option>
+            <option value="Southern">Southern</option>
+            <option value="Northern">Northern</option>
+            <option value="Eastern">Eastern</option>
+            <option value="North Western">North Western</option>
+            <option value="North Central">North Central</option>
+            <option value="Uva">Uva</option>
+            <option value="Sabaragamuwa">Sabaragamuwa</option>
+          </select>
+        </label>
+
+        <label id="districtLabel" style="display:none;">
+          District
+          <select id="district" required>
+            <option value="">Select district...</option>
+          </select>
+        </label>
+
+        <button type="submit">Register Admin</button>
+      </form>
+      <p id="adminMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <label>
+          ID number
+          <input type="text" id="loginIdNumber" placeholder="NIC / Driving / Passport" required />
+        </label>
+
+        <button type="submit">Sign In</button>
+      </form>
+      <p id="loginMessage" class="message"></p>
+    </section>
+  </main>
+
+  <p style="text-align:center;margin-top:1rem;"><a href="index.html">Back to voting</a> · <a href="dashboard.html">Admin Dashboard</a></p>
+
+  <script src="bg-rotator.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>

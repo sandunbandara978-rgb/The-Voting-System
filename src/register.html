@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voter Registration - Sri Lanka Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Voter Registration</h1>
+    <p>Register as a voter to be able to vote in the demo.</p>
+    <div class="theme-switch">
+      <label for="themeToggle">Light</label>
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" aria-label="Toggle theme" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <form id="registerForm">
+        <label>
+          Full name
+          <input type="text" id="regName" required />
+        </label>
+
+        <label>
+          ID type
+          <select id="regIdType">
+            <option value="nic">NIC</option>
+            <option value="driving">Driving license</option>
+            <option value="passport">Passport</option>
+          </select>
+        </label>
+
+        <label>
+          ID number
+          <input type="text" id="regIdNumber" required />
+        </label>
+
+        <label>
+          District / Province
+          <input type="text" id="regDistrict" required />
+        </label>
+
+        <button type="submit">Register</button>
+      </form>
+      <p id="regMessage" class="message"></p>
+    </section>
+  </main>
+
+  <p style="text-align:center;margin-top:1rem;"><a href="index.html">Back to voting</a> · <a href="verify.html">Already registered? Verify</a></p>
+
+  <script src="bg-rotator.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+  <script src="register.js" defer></script>
+</body>
+</html>
