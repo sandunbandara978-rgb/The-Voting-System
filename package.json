@@ -1,0 +1,12 @@
+{
+  "name": "sri-lanka-voting-system-simulation",
+  "version": "2.0.0",
+  "description": "Sri Lanka General Election Voting System Simulation",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "build": "npm run build:server && npm run build:client"
+  }
+}

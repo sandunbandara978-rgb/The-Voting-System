@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+}
+
+/* Senior Accessibility Mode Enhancements */
+.senior-accessible-root {
+  font-size: 1.15rem;
+}
+
+.senior-accessible-root button {
+  min-height: 52px;
+}
+
+.senior-accessible-root input {
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
+/* Custom Scrollbar for Civic Dashboard */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B192C;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
