@@ -2,11 +2,15 @@
   "name": "sri-lanka-voting-system-simulation",
   "version": "2.0.0",
   "description": "Sri Lanka General Election Voting System Simulation",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
-    "dev:server": "cd server && npm run dev",
-    "dev:client": "cd client && npm run dev",
-    "build:server": "cd server && npm run build",
-    "build:client": "cd client && npm run build",
-    "build": "npm run build:server && npm run build:client"
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build:server": "npm run build --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "build": "npm run build --workspace=server && npm run build --workspace=client"
   }
 }
