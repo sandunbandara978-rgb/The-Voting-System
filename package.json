@@ -11,6 +11,7 @@
     "dev:client": "npm run dev --workspace=client",
     "build:server": "npm run build --workspace=server",
     "build:client": "npm run build --workspace=client",
-    "build": "npm run build --workspace=server && npm run build --workspace=client"
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "postbuild": "node -e \"const fs = require('fs'); fs.rmSync('dist', {recursive:true, force:true}); fs.cpSync('client/dist', 'dist', {recursive:true});\""
   }
 }
