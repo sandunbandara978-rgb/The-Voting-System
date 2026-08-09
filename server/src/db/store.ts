@@ -3,7 +3,9 @@ import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
 
-const DB_FILE_PATH = path.join(__dirname, 'election_store.json');
+const DB_FILE_PATH = process.env.VERCEL || process.env.NODE_ENV === 'production'
+  ? path.join('/tmp', 'election_store.json')
+  : path.join(__dirname, 'election_store.json');
 
 interface StoreSchema {
   elections: Election[];

@@ -186,9 +186,13 @@ app.get('/api/admin/audit-logs', requireAdminAuth, (req: Request, res: Response)
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`  Sri Lanka Election Digital Simulation API Server  `);
-  console.log(`  Server running on http://localhost:${PORT}        `);
-  console.log(`====================================================`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`  Sri Lanka Election Digital Simulation API Server  `);
+    console.log(`  Server running on http://localhost:${PORT}        `);
+    console.log(`====================================================`);
+  });
+}
+
+export default app;
